@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Order Management System</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Food Order Management System</h1>
+
+<h2>Menu List</h2>
+<button onclick="loadMenus()">Load Menus</button>
+<div id="menuList"></div>
+
+<h2>Create Order</h2>
+<form id="orderForm">
+  Member ID: <input type="text" id="memberId"><br>
+  Menu ID: <input type="number" id="menuId"><br>
+  Quantity: <input type="number" id="quantity"><br>
+  <button type="submit">Submit Order</button>
+</form>
+
+<h2>Cancel Order</h2>
+Order ID: <input type="number" id="cancelOrderId"><br>
+<button onclick="cancelOrder()">Cancel Order</button>
+
+<script src="app.js"></script>
+</body>
+</html>
