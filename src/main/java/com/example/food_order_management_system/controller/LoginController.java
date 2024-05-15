@@ -16,5 +16,5 @@ public class LoginController {
     public String login() {
         return "redirect:/"; // 로그인 후 리다이렉트할 페이지
     }
-    
+
 }
