@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴 상세 정보</title>
+</head>
+<body>
+<div id="menuDiv"></div>
+<input type="number" id="quantityInput" value="1" min="1">
+<form id="orderForm" action="#" method="post">
+  <input type="hidden" id="menuIdInput" name="menuId">
+  <button type="button" onclick="addToCart()">주문 목록에 추가</button>
+</form>
+
+<!-- Thymeleaf를 사용하여 menuId 값을 JavaScript로 가져옴 -->
+<script th:inline="javascript">
+  var menuId = [[${menuId}]];
+</script>
+
+<a href = "/menus">메뉴 고르기</a>
+<div>
+<a href = "/menus/cart">장바구니</a>
+</div>
+<!-- JavaScript 코드 -->
+<script src="/static/menuDetail.js"></script>
+</body>
+</html>
