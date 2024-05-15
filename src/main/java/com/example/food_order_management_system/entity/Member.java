@@ -10,20 +10,18 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "MEMBERS")
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Member {
     @Id
     @Column(name = "MEMBER_ID")
     private String memberId;
 
-    @Column(name = "MEMBER_PASSWORD")
+    @Column(name = "member_name",nullable = false)
+    private String memberName;
+
+    @Column(name = "MEMBER_PASSWORD",nullable = false)
     private String memberPassword;
 
-    @Column(name="CONTACT_NUMBER")
-    private String contactNumber;
-
-    public Member(String memberId, String memberPassword, String contactNumber) {
-        this.memberId = memberId;
-        this.memberPassword = memberPassword;
-        this.contactNumber = contactNumber;
-    }
+    @Column(name="CONTACT_NUMBER", nullable = false, unique = true)
+    private String memberContact;
 }

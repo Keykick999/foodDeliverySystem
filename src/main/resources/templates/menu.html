@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu List</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src = "../static/menu.js"></script>
+    <title>Document</title>
+    <script src="/static/menu.js" defer></script>
+    <style>
+        #menuList a {
+            display: block;  /* 링크를 블록 레벨 요소로 만듭니다 */
+            margin-bottom: 10px;  /* 링크 사이에 약간의 공간을 추가합니다 */
+        }
+    </style>
 </head>
 <body>
-<h1>Menu List</h1>
-
-<div id="menuList">
-    <!-- 메뉴 목록이 여기에 표시될 것입니다. -->
-</div>
-
-
+<div id="menuList"></div>
+<a href="/menus/cart">장바구니</a>
 </body>
 </html>

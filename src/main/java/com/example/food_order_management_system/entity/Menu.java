@@ -7,13 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "MENUS")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Menu {
+public class Menu implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MENU_ID")
@@ -28,4 +30,10 @@ public class Menu {
 
     @Column(name = "PRICE", nullable = false)
     private int price;
+
+    public Menu(String menuName, Category category, int price) {
+        this.menuName = menuName;
+        this.category = category;
+        this.price = price;
+    }
 }

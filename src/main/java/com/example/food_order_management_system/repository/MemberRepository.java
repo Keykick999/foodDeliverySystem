@@ -10,4 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member,String> {
+    public boolean existsByMemberId(String memberId);
+
+    //이름으로 회원 찾기
 }

@@ -5,6 +5,7 @@ import com.example.food_order_management_system.enumerated.OrderStatus;
 import com.example.food_order_management_system.enumerated.PaymentMethod;
 import com.example.food_order_management_system.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -101,6 +102,7 @@ public class OrderService {
 
     // 주문 취소(전체 취소)
     @Transactional
+    @CacheEvict(value = "orderDetails", key = "#orderId")
     public void cancelOrder(Long orderId) {
         Optional<Order> order = orderRepository.findById(orderId);
         //주문 상태 취소로 변경
