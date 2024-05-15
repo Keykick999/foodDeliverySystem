@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginController {
 
     @GetMapping("/custom-login")
+    //@GetMapping("/login")
     public String getLoginPage() {
         return "login";
     }
@@ -17,4 +18,8 @@ public class LoginController {
         return "redirect:/"; // 로그인 후 리다이렉트할 페이지
     }
 
+    @PostMapping("/signup")
+    public String signUp(){
+        return "signUp";
+    }
 }
